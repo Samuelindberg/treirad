@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    color: rgb(75, 75, 75);
 }
 .box{
     width: 100px;
@@ -46,7 +47,7 @@ img{
     flex-direction: column;
 }
 .container-title{
-    margin-top: 200px;
+    margin-top: 100px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -57,4 +58,9 @@ img{
     color: red;
     margin-top: 150px;
     visibility: hidden;
+}
+#winnertag{
+    transition: 700ms;
+    font-size: 50px;
+    margin-bottom: 30px;
 }
