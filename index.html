@@ -4,11 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/script.js"></script>
+     <script src="/script.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
+    <img src="/img/211717_circle_icon.svg" alt="">
 </head>
 <body>
-    
+<div class="container-title">
+    <h1 onclick="checkWin()">TRE I RAD</h1>
+    <h2 id="upptagen">Upptagen!</h2>
+</div>
+
+    <div class="container">
+        <div id="player1-shape">
+        <h2 id="name1"></h2>
+        <img src="/img/296812_close_cross_delete_icon.svg" alt="">
+        </div>
+        <div class="game-container">
+            <div onclick="addSymbol(1)" id="box1" class="box">
+            <img id="cross1" src="/img/296812_close_cross_delete_icon.svg" alt="">
+            <img id="circle1" src="/img/211717_circle_icon.svg" alt="">
+            </div>
+            <div onclick="addSymbol(2)" id="box2" class="box">
+                <img id="cross2" src="/img/296812_close_cross_delete_icon.svg" alt="">
+                <img id="circle2" src="/img/211717_circle_icon.svg" alt=""></div>
+            <div onclick="addSymbol(3)" id="box3" class="box">
+                <img id="cross3" src="/img/296812_close_cross_delete_icon.svg" alt="">
+                <img id="circle3" src="/img/211717_circle_icon.svg" alt=""></div>
+            <div onclick="addSymbol(4)" id="box4" class="box">
+                <img id="cross4" src="/img/296812_close_cross_delete_icon.svg" alt="">
+                <img id="circle4" src="/img/211717_circle_icon.svg" alt=""></div>
+            <div onclick="addSymbol(5)" id="box5" class="box">
+                <img id="cross5" src="/img/296812_close_cross_delete_icon.svg" alt="">
+                <img id="circle5" src="/img/211717_circle_icon.svg" alt=""></div>
+            <div onclick="addSymbol(6)" id="box6" class="box">
+                <img id="cross6" src="/img/296812_close_cross_delete_icon.svg" alt="">
+                <img id="circle6" src="/img/211717_circle_icon.svg" alt=""></div>
+            <div onclick="addSymbol(7)" id="box7" class="box">
+                <img id="cross7" src="/img/296812_close_cross_delete_icon.svg" alt="">
+                <img id="circle7" src="/img/211717_circle_icon.svg" alt=""></div>
+            <div onclick="addSymbol(8)" id="box8" class="box">
+                <img id="cross8" src="/img/296812_close_cross_delete_icon.svg" alt="">
+                <img id="circle8" src="/img/211717_circle_icon.svg" alt=""></div>
+            <div onclick="addSymbol(9)" id="box9" class="box">
+                <img id="cross9" src="/img/296812_close_cross_delete_icon.svg" alt="">
+                <img id="circle9" src="/img/211717_circle_icon.svg" alt="">
+            </div>
+         </div> 
+         <div id="player2-shape">
+            <h2 id="name2"></h2>
+        </div>  
+    </div>
+   
 </body>
 </html>
