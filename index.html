@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="container-title">
-    <h1 onclick="checkWin()">TRE I RAD</h1>
+    <h1>TRE I RAD</h1>
     <h2 id="upptagen">Upptagen!</h2>
     <h1 id="winnertag"></h1>
 </div>
@@ -51,12 +51,22 @@
             <div onclick="addSymbol(9)" id="box9" class="box">
                 <img class="images" id="cross9" src="/img/296812_close_cross_delete_icon.svg" alt="">
                 <img class="images" id="circle9" src="/img/211717_circle_icon.svg" alt="">
+                
             </div>
          </div> 
+         <div id="insert-name">
+            <label for="name">Player 1:</label>
+                    <input id="names1" type="text">
+                    <label for="användarnamn">Player 2</label>
+                    <input id="names2" type="text">
+                    <button onclick="submitName()" id="play">PLAY!</button>
+         </div>
+         
          <div id="player2-shape">
             <h2 id="name2"></h2>
         </div>  
     </div>
+    <button id="restart" onclick="restart()">restart</button>
    
 </body>
 </html>

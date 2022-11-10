@@ -2,12 +2,16 @@
     padding: 0;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    color: rgb(75, 75, 75);
+    color: white;
+}
+body{
+    background-color: coral;
+    text-align: center;
 }
 .box{
     width: 100px;
     height: 100px;
-    border: 3px solid lightblue;
+    border: 2px solid rgb(107, 172, 194);
     margin: 5px;
 }
 img{
@@ -16,7 +20,7 @@ img{
     display: none;
 }
 .box:hover{
-    background-color: rgb(239, 239, 239);
+    background-color: rgb(186, 186, 186);
 }
 .container{
   display: flex;
@@ -25,12 +29,28 @@ img{
 
     font-family: Arial, Helvetica, sans-serif;
 }
+.container-title h1{
+    font-size: 80px;
+    margin-bottom: 0;
+}
+.container-title{
+    margin-top:0;
+    display: flex;
+    justify-content: center;
+}
+#name1{
+    font-size: 30px;
+    margin-top: 30px;
+}
 #player1-shape{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 300px;
     height: 360px;
+    background-color: rgb(167, 241, 252);
+   margin-right: 30px;
+   
 }
 #player2-shape{
     display: flex;
@@ -38,6 +58,16 @@ img{
     align-items: center;
     width: 300px;
     height: 360px;
+    background-color: rgb(167, 241, 252);
+    margin-left: 30px;
+}
+#player2-shape h2{
+    color: coral;
+    font-size: 40px;
+}
+#player1-shape h2{
+    color: coral;
+    font-size: 40px;
 }
 .game-container{
     width: 360px;
@@ -57,10 +87,36 @@ img{
 #upptagen{
     color: red;
     margin-top: 150px;
-    visibility: hidden;
+    display: none;
 }
 #winnertag{
     transition: 700ms;
     font-size: 50px;
     margin-bottom: 30px;
+}
+#insert-name{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 1000px;
+    background-color: rgb(174, 174, 174);
+    position: absolute;
+    font-size: 30px;
+}
+#restart{
+    width: 180px;
+    height: 50px;
+    border-radius: 20px;
+    border: solid 2px rgb(167, 241, 252);;
+    background-color: transparent;
+    font-size: 25px;
+}
+#insert-name button{
+    margin-top: 20px;
+    width: 150px;
+}
+.insert-name label{
+    font-size: 100px;
 }
