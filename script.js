@@ -1,6 +1,5 @@
 let player1turn = true; 
-// let player1 = prompt("Spelare 1 namn:");
-// let player2 = prompt("Spelare 2 namn:");
+let playerBoxes = [document.getElementById("player1-shape"),document.getElementById("player2-shape")];
 let player1Wins = 0;
 let player2Wins = 0;
 let board = [0,0,0,0,0,0,0,0,0];
@@ -10,6 +9,8 @@ let images1 = document.querySelectorAll("img");
 let images2 = document.getElementsByTagName("img");
 let images3 = document.getElementsByClassName("images");
 let player1box = document.getElementById("player1-shape");
+
+
 
 
 
@@ -72,23 +73,18 @@ function checkWin(){
 }
 function addSymbol(ruta){
    
-    document.getElementById("upptagen").style.visibility="hidden";
-    if(board[ruta-1]==0){
-        if(player1turn)
-        {
-            document.getElementById("cross"+ruta).style.display="block";
-            player1turn =false;
-            board[ruta-1]=1;
-        }
-       else{
-        document.getElementById("circle"+ruta).style.display="block";
-        player1turn =true;
-        board[ruta-1] = 2;
-       }
-    }   
-    else{
-        document.getElementById("upptagen").style.visibility="visible";
-    }
+    document.getElementById("upptagen").style.display="hidden";
+if(board[ruta-1]==0){
+   if(player1turn){
+      document.getElementById("cross"+ruta).style.display="block";
+      player1turn =false;
+      board[ruta-1]=1;
+    } else{document.getElementById("circle"+ruta).style.display="block";player1turn=true;board[ruta-1]=2} 
+
+} else{
+   document.getElementById("upptagen").style.display="block";
+}
+
     checkWin();
 }
 function restart(){
@@ -106,8 +102,20 @@ function miniPlayerBox(){
 }
 function submitName(){
    let usernames = [[document.getElementById("names1").value],[document.getElementById("names2").value]];
-   document.getElementById("name1").innerHTML = "player 1: " + usernames[0];
-   document.getElementById("name2").innerHTML = "player 2: " + usernames[1];
+   document.getElementById("name1").innerHTML = usernames[0];
+   document.getElementById("name2").innerHTML = usernames[1];
    document.getElementById("insert-name").style.display ="none";
-t
+
 }
+playerBoxes[0].addEventListener("mouseenter",function(){
+    playerBoxes[0].style.height="330px";
+});
+playerBoxes[0].addEventListener("mouseleave",function(){
+   playerBoxes[0].style.height="100px";
+});
+playerBoxes[1].addEventListener("mouseenter",function(){
+   playerBoxes[1].style.height="330px";
+});
+playerBoxes[1].addEventListener("mouseleave",function(){
+  playerBoxes[1].style.height="100px";
+});
