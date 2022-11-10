@@ -71,7 +71,7 @@
          <div id="insert-name">
                 <div class="users">
                     <div class="user1">
-                        <label for="name">PLAYER 1</label>
+                        <label for="name">PLAYER <span id="pink">1</span> </label></label>
                         <input id="names1" type="text">
                     </div>
                     <div class="user2">
@@ -79,14 +79,15 @@
                         <input id="names2" type="text">
                     </div>
                 </div>
-            
-
-         <h1 id="play"onclick="submitName()" >PLAY!</h1>
-                     
+                <button id="play" onclick="submitName()"> PLAY! </button>
+            </div>
+            <div id="player2-shape">
+                <h2>Player 2</h2>
+                <h2 id="name2"></h2>
+                <h2 id="wins"></h2>
          </div> 
-         <div  id="player2-shape">
-            <h2 id="name2"></h2>
-        </div>  
+         
+            </div>
     </div>
     <button id="restart" onclick="restart()">restart</button>
    

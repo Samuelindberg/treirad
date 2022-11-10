@@ -22,16 +22,13 @@ function winScreen(winner){
     document.getElementById("restart").style.display="block";
 }
 function checkWin(){ 
-    if(board[0]==1 && board[3]==1 && board[6]==1){
+    if(board[0]==1 && board[1]==1 && board[2]==1){
         winScreen(player1);
-        images1.style.display="none";
-        images2.style.display="none";
-        images3.style.display="none";
     }
-    if(board[0]==2 && board[3]==2 && board[6]==2){
+    if(board[0]==1 && board[2]==2 && board[3]==2){
         winScreen(player2);
      }
-     if(board[1]==1 && board[4]==1 && board[7]==1){
+     if(board[4]==1 && board[5]==1 && board[6]==1){
         winScreen(player1);
      }
      if(board[1]==2 && board[4]==2 && board[7]==2){
@@ -103,11 +100,19 @@ function miniPlayerBox(){
 }
 function submitName(){
    let usernames = [[document.getElementById("names1").value],[document.getElementById("names2").value]];
-   document.getElementById("name1").innerHTML = usernames[0];
-   document.getElementById("name2").innerHTML = usernames[1];
-   document.getElementById("insert-name").style.display ="none";
-
+   document.getElementById("names1").innerHTML = usernames[0];
+   document.getElementById("names2").innerHTML = usernames[1];
+   document.getElementById("player1-shape").style.backgroundColor="#A7F1FC";
+   document.getElementById("player2-shape").style.backgroundColor="#A7F1FC";
+   document.getElementById("insert-name").style.transform="translate(0,100vh)";
+   
+   document.getElementById("names1").innerHTML = usernames[0];
+   document.getElementById("names2").innerHTML = usernames[1];
 }
+document.getElementById("play").addEventListener("click",function(){
+
+ }
+);
 playerBoxes[0].addEventListener("mouseenter",function(){
     playerBoxes[0].style.height="330px";
 });
