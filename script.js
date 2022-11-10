@@ -9,7 +9,7 @@ let images1 = document.querySelectorAll("img");
 let images2 = document.getElementsByTagName("img");
 let images3 = document.getElementsByClassName("images");
 let player1box = document.getElementById("player1-shape");
-
+let usernames = [[document.getElementById("names1").value],[document.getElementById("names2").value]];
 
 
 
@@ -23,25 +23,25 @@ function winScreen(winner){
 }
 function checkWin(){ 
     if(board[0]==1 && board[1]==1 && board[2]==1){
-        winScreen(player1);
+        winScreen(usernames[0]);
     }
     if(board[0]==1 && board[2]==2 && board[3]==2){
         winScreen(player2);
      }
      if(board[4]==1 && board[5]==1 && board[6]==1){
-        winScreen(player1);
+        winScreen(usernames[0]);
      }
      if(board[1]==2 && board[4]==2 && board[7]==2){
         winScreen(player2);
      }
      if(board[2]==1 && board[5]==1 && board[8]==1){
-        winScreen(player1);
+        winScreen(usernames[0]);
      }
      if(board[2]==2 && board[5]==2 && board[8]==2){
         winScreen(player2);
      }
      if(board[0]==1 && board[1]==1 && board[2]==1){
-        winScreen(player1);
+        winScreen(usernames[0]);
      }
      if(board[0]==2 && board[1]==2 && board[2]==2){
         winScreen(player2);
@@ -99,7 +99,7 @@ function miniPlayerBox(){
    player1box.style.height="100px";
 }
 function submitName(){
-   let usernames = [[document.getElementById("names1").value],[document.getElementById("names2").value]];
+ 
    document.getElementById("names1").innerHTML = usernames[0];
    document.getElementById("names2").innerHTML = usernames[1];
    document.getElementById("player1-shape").style.backgroundColor="#A7F1FC";
