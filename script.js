@@ -19,6 +19,7 @@ function winScreen(winner){
     winnerTitle.style.transform= "scale(200%)";
     winnerTitle.style.color="green"; 
     winnerPerson=true;
+    document.getElementById("restart").style.display="block";
 }
 function checkWin(){ 
     if(board[0]==1 && board[3]==1 && board[6]==1){

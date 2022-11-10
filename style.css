@@ -43,7 +43,11 @@ img{
     font-family: Arial, Helvetica, sans-serif;
 }
 .container input{
-    color:black;
+    color:coral;
+    height: 22px;
+    width: 200px;
+    border-radius: 10px;
+    border: none;
 }
 .container-title h1{
     font-size: 80px;
@@ -133,11 +137,41 @@ img{
     border: solid 2px rgb(167, 241, 252);;
     background-color: transparent;
     font-size: 25px;
+    display: none;
 }
 #insert-name button{
     margin-top: 20px;
     width: 150px;
+
 }
-.insert-name label{
-    font-size: 100px;
+.user1{
+    margin-right: 300px;
+    display: flex;
+    gap:50px;
+    flex-direction: column;
+}
+.user2{
+    display: flex;
+    gap:50px;
+    flex-direction: column;
+}
+.user1 label{
+    
+   transform: scale(250%);
+}
+.user2 label{
+    
+    transform: scale(150%);
+ }
+#play{
+    background-color: blue;
+}
+.user-container{
+    display: flex;
+    justify-content: space-between;
+}
+.users{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: space-between;
 }
