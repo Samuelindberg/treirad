@@ -101,6 +101,7 @@ function restart(){
     }
 }
 function miniPlayerBox(){
+   sett
    player1box.style.height="100px";
 }
 function submitName(){
@@ -108,5 +109,5 @@ function submitName(){
    document.getElementById("name1").innerHTML = "player 1: " + usernames[0];
    document.getElementById("name2").innerHTML = "player 2: " + usernames[1];
    document.getElementById("insert-name").style.display ="none";
-
+t
 }
