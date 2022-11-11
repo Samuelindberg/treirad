@@ -12,23 +12,22 @@
    <title>Tic Tac To</title>
 </head>
 <body>
-    <div class="page-container">
         <div id="container-title">
             <h2>TIC TAC TOE</h2>
-            <h2 id="upptagen">Upptagen!</h2>
         </div>
-            <div>
-        
             </div>
             <div id="winnerscreen"class="winnerscreen">
                 <h2 id="winnertag"></h2>
-                <button id="restart" onclick="restart()">restart</button>  
+                <button id="restart" onclick="restart()">TRY AGAIN!</button>  
             </div>
- 
+            <div id="tiescreen"class="tiescreen">
+                <h2 id="tietag">TIE</h2>
+                <button id="try-again" onclick="restartTie()">TRY AGAIN!</button>  
+            </div>
             <div class="container">
                 <div onclick=""id="player1-shape">
                     <h2 id="name1"></h2>
-                    <h2 id="wins"></h2>
+                    <h2 id="p1-wins">WINS:0</h2>
                     </div>
                 <div id="game-container"class="game-container">
                     <div onclick="addSymbol(1)" id="box1" class="box">
@@ -87,14 +86,14 @@
                         <button id="play" onclick="submitName()"> PLAY! </button>
                     </div>
                     <div id="player2-shape">
-                        <h2>Player 2</h2>
                         <h2 id="name2"></h2>
-                        <h2 id="wins"></h2>
+                        <h2 id="p2-wins">WINS:0</h2>
+                        <h1 id="display-symbol2">O</h1>
                  </div> 
                  
             </div>
            
-    </div>
+
 
    
    

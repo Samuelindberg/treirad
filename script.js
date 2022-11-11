@@ -1,6 +1,9 @@
 let player1turn = true; 
 let player1Wins = 0;
 let player2Wins = 0;
+let player1WinsDisplay = document.getElementById("p1-wins");
+let player2WinsDisplay = document.getElementById("p2-wins");
+let player2WinsBigDisplay = document.getElementById("display-symbol2");
 let board = [0,0,0,0,0,0,0,0,0];
 let boardSymbols = document.getElementsByClassName("symbols");
 let winnerPerson = false;
@@ -12,13 +15,25 @@ let playerBoxOpen = [false,false];
 let boxes = document.getElementsByClassName("box");
 
 function winScreen(winner){
-  
-
-  
     winnerTitle.innerText = winner + " vann!"; 
     winnerTitle.style.fontSize="175px";
     winnerPerson=true;
     document.getElementById("winnerscreen").style.display="flex";
+    if(winner==usernames[0]){
+      player1Wins++;
+      player1WinsDisplay.innerText="WINS:"+ player1Wins;
+    } else{
+      player2Wins++;
+      player2WinsBigDisplay.innerText=player2Wins;
+      player2WinsBigDisplay.style.transition="2000ms";
+      player1WinsDisplay.innerText="WINS:"+ player1Wins;
+//uppdaterad poäng animation
+      playerBoxes[1].style.height="33vw";
+      player2WinsDisplay.innerText="WINS:"+ player2Wins;
+      player2WinsBigDisplay.style.transform="translate(0,200px) scale(2000%)";
+ 
+    }
+   
     
 }
 function checkWin(){ 
@@ -69,19 +84,24 @@ function checkWin(){
 	
 }}
 function addSymbol(ruta){
-    document.getElementById("upptagen").style.display="hidden";
-if(board[ruta-1]==0){
-   if(player1turn){
-      document.getElementById("cross"+ruta).style.display="block";
-      player1turn =false;
-      board[ruta-1]=1;
-    } else{document.getElementById("circle"+ruta).style.display="block";player1turn=true;board[ruta-1]=2} 
 
-} else{
-   document.getElementById("upptagen").style.display="block";
-}
+  
+      if(board[ruta-1]==0){
+         if(player1turn){
+            document.getElementById("cross"+ruta).style.display="block";
+            player1turn =false;
+            board[ruta-1]=1;
+          } else{document.getElementById("circle"+ruta).style.display="block";player1turn=true;board[ruta-1]=2} 
+      
+      } else{
+       // ska vara upptagen-ruta 
+      }
+      
 
     checkWin();
+    if(!board.includes(0)){
+      document.getElementById("tiescreen").style.display="flex";
+    }
 }
 function restart(){
    document.getElementById("winnerscreen").style.display="none";
@@ -90,6 +110,14 @@ function restart(){
       for(var i=0; i< boardSymbols.length; i++){
          boardSymbols[i].style.display = "none";
      }
+}
+function restartTie(){
+   document.getElementById("tiescreen").style.display="none";
+   winnerPerson=false;
+   board = [0,0,0,0,0,0,0,0,0];
+   for(var i=0; i< boardSymbols.length; i++){
+      boardSymbols[i].style.display = "none";
+  }
 }
 function miniPlayerBox(){
    sett
@@ -100,8 +128,8 @@ function submitName(){
    document.getElementById("player1-shape").style.backgroundColor="#A7F1FC";
    document.getElementById("player2-shape").style.backgroundColor="#A7F1FC";
    document.getElementById("insert-name").style.transform="translate(0,100vh)";
-   document.getElementById("name1").innerText= "player\ " + usernames[0];
-   document.getElementById("name2").innerText=usernames[1];
+   document.getElementById("name1").innerText= "player " + usernames[0];
+   document.getElementById("name2").innerText="player " + usernames[1];
    return usernames;
 }
 
