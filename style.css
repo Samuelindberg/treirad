@@ -3,6 +3,7 @@
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
+    outline: none;
 }
 html{
     height: 100vh;
@@ -11,6 +12,14 @@ body{
     background-color: coral;
     text-align: center;
     height: 100vh;
+    overflow: hidden;
+}
+#overlay-winscreen{
+    width: 100vw;
+    height: 100vh;
+   opacity: 0.4;
+    position: absolute;
+    background-color: rgb(59, 59, 59);
 }
 .box{
     width: 100px;
@@ -30,12 +39,11 @@ body{
     
 }
 .game-container h1{
-   
    display: none;
 }
-.container{
-  display: flex;
-  justify-content: space-evenly;
+.container{ 
+   display: flex;
+    justify-content: space-evenly;
     font-family: Arial, Helvetica, sans-serif;
 }
 .container input{
@@ -48,12 +56,14 @@ body{
     font-family: 'Rubik Mono One', sans-serif;
     text-align: center;
 }
-.container-title h2{
-    font-size: 80px;
-    margin-bottom: 0;
+#container-title h2{
+    font-size: 60px;
+    margin-top:130px;
+    margin-bottom: 40px;
+
+
 }
 .container-title{
-    margin-top:0;
     display: flex;
     justify-content: center;
 }
@@ -76,10 +86,12 @@ body{
     transition: 300ms;
 }
 #player2-shape h2{
+    font-family: 'Black Han Sans', sans-serif;
     color: coral;
     font-size: 40px;
 }
 #player1-shape h2{
+    font-family: 'Black Han Sans', sans-serif;
     color: coral;
     font-size: 40px;
     
@@ -103,10 +115,17 @@ body{
     display: none;
 }
 #winnertag{
-    transform: translateY(40vh);
     position: absolute;
-    transition: 5000ms;
     font-size: 100px;
+    color: #A2FCF7;
+    font-family: 'Rubik Mono One', sans-serif;
+}
+#winter-title{
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #insert-name{
     display: flex;
@@ -126,13 +145,14 @@ body{
     height: 10vw;
 }
 #restart{
-    width: 180px;
-    height: 50px;
+    width: 500px;
+    height: 100px;
     border-radius: 20px;
     border: solid 2px rgb(167, 241, 252);;
     background-color: transparent;
     font-size: 25px;
-    display: none;
+    bottom: 10vh;
+    position: absolute;
 }
 #insert-name button{
     margin-top: 20px;
@@ -181,4 +201,9 @@ body{
 .user1 span {
     font-family: 'Black Han Sans', sans-serif;
     color: #FFB9EF;
+}
+.winnerscreen{
+    height: 100vh;
+    display: none;
+    justify-content: center;
 }

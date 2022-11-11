@@ -12,83 +12,91 @@
    <title>Tic Tac To</title>
 </head>
 <body>
-<div class="container-title">
-    <h2>TIC TAC TOE</h2>
-    <h2 id="upptagen">Upptagen!</h2>
-    <h2 id="winnertag"></h2>
-</div>
-
-    <div class="container">
-        <div id="player1-shape">
-            <h2>Player 1</h2>
-            <h2 id="name1"></h2>
-            <h2 id="wins"></h2>
-            </div>
-        <div class="game-container">
-            <div onclick="addSymbol(1)" id="box1" class="box">
-                <h1 class="symbols"id="cross1">X</h1>
-                <h1 class="symbols"id="circle1">O</h1>
-            </div>
-
-            <div onclick="addSymbol(2)" id="box2" class="box">
-                <h1 class="symbols"id="cross2">X</h1>
-                <h1 class="symbols"id="circle2">O</h1>
-            </div>
-            <div onclick="addSymbol(3)" id="box3" class="box">
-                <h1 class="symbols"id="cross3">X</h1>
-                <h1 class="symbols"id="circle3">O</h1>
-            </div>
-            <div onclick="addSymbol(4)" id="box4" class="box">
-                <h1 class="symbols"id="cross4">X</h1>
-                <h1 class="symbols"id="circle4">O</h1>
-            </div>
-
-            <div onclick="addSymbol(5)" id="box5" class="box">
-                <h1 class="symbols"id="cross5">X</h1>
-                <h1 class="symbols"id="circle5">O</h1>
-            </div>
-            <div onclick="addSymbol(6)" id="box6" class="box">
-                <h1 class="symbols"id="cross6">X</h1>
-                <h1 class="symbols"id="circle6">O</h1>
-            </div>
-            <div onclick="addSymbol(7)" id="box7" class="box">
-                <h1 class="symbols"id="cross7">X</h1>
-                <h1 class="symbols"id="circle7">O</h1>
-             </div>
-            <div onclick="addSymbol(8)" id="box8" class="box">
-                <h1 class="symbols"id="cross8">X</h1>
-                <h1 class="symbols"id="circle8">O</h1>
-              </div>
-            <div onclick="addSymbol(9)" id="box9" class="box">
-                <h1 class="symbols"id="cross9">X</h1>
-                <h1 class="symbols"id="circle9">O</h1>
-            </div>
-
+    <div class="page-container">
+        <div id="container-title">
+            <h2>TIC TAC TOE</h2>
+            <h2 id="upptagen">Upptagen!</h2>
+        </div>
+            <div>
         
-      
-         </div> 
-         <div id="insert-name">
-                <div class="users">
-                    <div class="user1">
-                        <label for="name">PLAYER 1</label></label>
-                        <input id="names1" type="text">
-                    </div>
-                    <div class="user2">
-                        <label for="användarnamn">PLAYER 2</label>
-                        <input id="names2" type="text">
-                    </div>
-                </div>
-                <button id="play" onclick="submitName()"> PLAY! </button>
             </div>
-            <div id="player2-shape">
-                <h2>Player 2</h2>
-                <h2 id="name2"></h2>
-                <h2 id="wins"></h2>
-         </div> 
-         
+            <div id="winnerscreen"class="winnerscreen">
+                <h2 id="winnertag"></h2>
+                <button id="restart" onclick="restart()">restart</button>  
             </div>
+ 
+            <div class="container">
+                <div onclick=""id="player1-shape">
+                    <h2 id="name1"></h2>
+                    <h2 id="wins"></h2>
+                    </div>
+                <div id="game-container"class="game-container">
+                    <div onclick="addSymbol(1)" id="box1" class="box">
+                        <h1 class="symbols"id="cross1">X</h1>
+                        <h1 class="symbols"id="circle1">O</h1>
+                    </div>
+        
+                    <div onclick="addSymbol(2)" id="box2" class="box">
+                        <h1 class="symbols"id="cross2">X</h1>
+                        <h1 class="symbols"id="circle2">O</h1>
+                    </div>
+                    <div onclick="addSymbol(3)" id="box3" class="box">
+                        <h1 class="symbols"id="cross3">X</h1>
+                        <h1 class="symbols"id="circle3">O</h1>
+                    </div>
+                    <div onclick="addSymbol(4)" id="box4" class="box">
+                        <h1 class="symbols"id="cross4">X</h1>
+                        <h1 class="symbols"id="circle4">O</h1>
+                    </div>
+        
+                    <div onclick="addSymbol(5)" id="box5" class="box">
+                        <h1 class="symbols"id="cross5">X</h1>
+                        <h1 class="symbols"id="circle5">O</h1>
+                    </div>
+                    <div onclick="addSymbol(6)" id="box6" class="box">
+                        <h1 class="symbols"id="cross6">X</h1>
+                        <h1 class="symbols"id="circle6">O</h1>
+                    </div>
+                    <div onclick="addSymbol(7)" id="box7" class="box">
+                        <h1 class="symbols"id="cross7">X</h1>
+                        <h1 class="symbols"id="circle7">O</h1>
+                     </div>
+                    <div onclick="addSymbol(8)" id="box8" class="box">
+                        <h1 class="symbols"id="cross8">X</h1>
+                        <h1 class="symbols"id="circle8">O</h1>
+                      </div>
+                    <div onclick="addSymbol(9)" id="box9" class="box">
+                        <h1 class="symbols"id="cross9">X</h1>
+                        <h1 class="symbols"id="circle9">O</h1>
+                    </div>
+        
+                
+              
+                 </div> 
+                 <div id="insert-name">
+                        <div class="users">
+                            <div class="user1">
+                                <label for="name">PLAYER 1</label></label>
+                                <input id="names1" type="text">
+                            </div>
+                            <div class="user2">
+                                <label for="användarnamn">PLAYER 2</label>
+                                <input id="names2" type="text">
+                            </div>
+                        </div>
+                        <button id="play" onclick="submitName()"> PLAY! </button>
+                    </div>
+                    <div id="player2-shape">
+                        <h2>Player 2</h2>
+                        <h2 id="name2"></h2>
+                        <h2 id="wins"></h2>
+                 </div> 
+                 
+            </div>
+           
     </div>
-    <button id="restart" onclick="restart()">restart</button>
+
+   
    
 </body>
 </html>

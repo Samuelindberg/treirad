@@ -1,5 +1,4 @@
 let player1turn = true; 
-let playerBoxes = [document.getElementById("player1-shape"),document.getElementById("player2-shape")];
 let player1Wins = 0;
 let player2Wins = 0;
 let board = [0,0,0,0,0,0,0,0,0];
@@ -7,18 +6,26 @@ let boardSymbols = document.getElementsByClassName("symbols");
 let winnerPerson = false;
 let winnerTitle = document.getElementById("winnertag");
 let player1box = document.getElementById("player1-shape");
+let playerBoxes = [document.getElementById("player1-shape"),document.getElementById("player2-shape")];
 let usernames =[];
+let playerBoxOpen = [false,false];
+let boxes = document.getElementsByClassName("box");
 
 function winScreen(winner){
-    winnerTitle.innerText = winner + " vann!";
-
-    winnerTitle.style.color="#FFB9EF"; 
-    winnerTitle.style.fontSize="400px";
-    winnerTitle.style.transition="1000ms"
-    winnerTitle.style.opacity="0";
-   
+   document.body.style.backgroundColor = "#FF7F50";
+   document.getElementById("player1-shape").style.backgroundColor="#82c7d1";
+   document.getElementById("player2-shape").style.backgroundColor="#82c7d1";
+   for(var i=0; i< boxes.length; i++){
+      boxes[i].style.borderColor = "#d68dc5";
+   }
+   for(var i=0; i< boardSymbols.length; i++){
+      boardSymbols[i].style.color = "#d68dc5";
+  }
+  
+    winnerTitle.innerText = winner + " vann!"; 
+    winnerTitle.style.fontSize="175px";
     winnerPerson=true;
-    document.getElementById("restart").style.display="block";
+    document.getElementById("winnerscreen").style.display="flex";
     
 }
 function checkWin(){ 
@@ -100,18 +107,24 @@ function submitName(){
    document.getElementById("player1-shape").style.backgroundColor="#A7F1FC";
    document.getElementById("player2-shape").style.backgroundColor="#A7F1FC";
    document.getElementById("insert-name").style.transform="translate(0,100vh)";
+   document.getElementById("name1").innerText= "player\ " + usernames[0];
+   document.getElementById("name2").innerText=usernames[1];
    return usernames;
 }
 
 playerBoxes[0].addEventListener("mouseenter",function(){
-    playerBoxes[0].style.height="33.3vw";
+   playerBoxes[0].style.height="33.3vw";
 });
 playerBoxes[0].addEventListener("mouseleave",function(){
-   playerBoxes[0].style.height="100px";
+  playerBoxes[0].style.height="100px";
 });
 playerBoxes[1].addEventListener("mouseenter",function(){
-   playerBoxes[1].style.height="33.3vw";
+  playerBoxes[1].style.height="33.3vw";
 });
 playerBoxes[1].addEventListener("mouseleave",function(){
-  playerBoxes[1].style.height="100px";
+ playerBoxes[1].style.height="100px";
 });
+
+function boxesSizing (player){
+   playerBoxOpen?playerBoxes[player].style.height="100px":playerBoxes[player].style.height="33.3vw";
+}
