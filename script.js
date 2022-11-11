@@ -1,9 +1,9 @@
 let player1turn = true; 
 let player1Wins = 0;
 let player2Wins = 0;
-let player1WinsDisplay = document.getElementById("p1-wins");
-let player2WinsDisplay = document.getElementById("p2-wins");
-let player2WinsBigDisplay = document.getElementById("display-symbol2");
+let playerWinsDisplay = [document.getElementById("p1-wins"),document.getElementById("p2-wins")];
+let playerWinsBigDisplay = [document.getElementById("display-symbol1"),document.getElementById("display-symbol2")];
+
 let board = [0,0,0,0,0,0,0,0,0];
 let boardSymbols = document.getElementsByClassName("symbols");
 let winnerPerson = false;
@@ -16,26 +16,19 @@ let boxes = document.getElementsByClassName("box");
 
 function winScreen(winner){
     winnerTitle.innerText = winner + " vann!"; 
-    winnerTitle.style.fontSize="175px";
     winnerPerson=true;
     document.getElementById("winnerscreen").style.display="flex";
+
     if(winner==usernames[0]){
       player1Wins++;
-      player1WinsDisplay.innerText="WINS:"+ player1Wins;
+      playerWinsDisplay[0].innerText="WINS:"+ player1Wins;
     } else{
       player2Wins++;
-      player2WinsBigDisplay.innerText=player2Wins;
-      player2WinsBigDisplay.style.transition="2000ms";
-      player1WinsDisplay.innerText="WINS:"+ player1Wins;
-//uppdaterad poäng animation
-      playerBoxes[1].style.height="33vw";
-      player2WinsDisplay.innerText="WINS:"+ player2Wins;
-      player2WinsBigDisplay.style.transform="translate(0,200px) scale(2000%)";
- 
-    }
-   
-    
+      playerWinsDisplay[1].innerText="WINS:"+ player2Wins;
+    } 
 }
+
+
 function checkWin(){ 
     if(board[0]==1 && board[1]==1 && board[2]==1){
         winScreen(usernames[0]);
@@ -73,16 +66,21 @@ function checkWin(){
      if(board[2]==2 && board[5]==2 && board[8]==2){
         winScreen(usernames[1]);
      }
+     
      if(board[0]==1 && board[4]==1 && board[8]==1){
       winScreen(usernames[0]);
      }
      if(board[0]==2 && board[4]==2 && board[8]==2){
         winScreen(usernames[1]);
      }
+
      if(board[2]==1 && board[4]==1 && board[6]==1){
       winScreen(usernames[0]);
-	
-}}
+     }
+      if(board[2]==2 && board[4]==2 && board[6]==2){
+         winScreen(usernames[1]);
+   }
+}
 function addSymbol(ruta){
 
   
@@ -119,10 +117,7 @@ function restartTie(){
       boardSymbols[i].style.display = "none";
   }
 }
-function miniPlayerBox(){
-   sett
-   player1box.style.height="100px";
-}
+
 function submitName(){
    usernames = [[document.getElementById("names1").value],[document.getElementById("names2").value]];
    document.getElementById("player1-shape").style.backgroundColor="#A7F1FC";
@@ -135,6 +130,9 @@ function submitName(){
 
 playerBoxes[0].addEventListener("mouseenter",function(){
    playerBoxes[0].style.height="33.3vw";
+   s
+   document.getElementById("display-symbol1").style.transform="scale(200%)";
+
 });
 playerBoxes[0].addEventListener("mouseleave",function(){
   playerBoxes[0].style.height="100px";
