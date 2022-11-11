@@ -4,9 +4,13 @@
     font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
+html{
+    height: 100vh;
+}
 body{
     background-color: coral;
     text-align: center;
+    height: 100vh;
 }
 .box{
     width: 100px;
@@ -16,22 +20,17 @@ body{
     justify-content: center;
     align-items: center;
 }
-img{
-    width: 100px;
-    position: absolute;
-    display: none;
-}
 .box:hover{
       background-color: #A7F1FC;
 }
 .game-container h1{
-    font-size:750%;
+    font-size:1000%;
     display: none;
  color: #ffb9ef;
     
 }
 .game-container h1{
-   position: absolute;
+   
    display: none;
 }
 .container{
@@ -49,7 +48,7 @@ img{
     font-family: 'Rubik Mono One', sans-serif;
     text-align: center;
 }
-.container-title h1{
+.container-title h2{
     font-size: 80px;
     margin-bottom: 0;
 }
@@ -83,6 +82,7 @@ img{
 #player1-shape h2{
     color: coral;
     font-size: 40px;
+    
 }
 .game-container{
     gap: 5px;
@@ -90,10 +90,7 @@ img{
    grid-template-rows: 1fr 1fr 1fr;
    grid-template-columns: 1fr 1fr 1fr;
 }
-
-
-.container-title{
-    margin-top: 100px;
+.container-title{   
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -106,9 +103,10 @@ img{
     display: none;
 }
 #winnertag{
-    transition: 700ms;
-    font-size: 50px;
-    margin-bottom: 30px;
+    transform: translateY(40vh);
+    position: absolute;
+    transition: 5000ms;
+    font-size: 100px;
 }
 #insert-name{
     display: flex;
@@ -116,7 +114,7 @@ img{
     justify-content: center;
     align-items: center;
     gap: 0px;
-    height: 1000px;
+    height: 870px;
     width: 80%;
    background-color:rgb(167, 241, 252) ; 
     position: absolute;
@@ -153,12 +151,12 @@ img{
     flex-direction: column;
 }
 .user1 label{
-    color: #FFB9EF;
+    color: #e58ad0;
    transform: scale(250%);
    font-family: 'Black Han Sans', sans-serif;
 }
 .user2 label{
-    color: #FFB9EF;
+    color: #e58ad0;
     transform: scale(250%);
     font-family: 'Black Han Sans', sans-serif;
  }

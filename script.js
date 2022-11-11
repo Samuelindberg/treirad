@@ -3,23 +3,23 @@ let playerBoxes = [document.getElementById("player1-shape"),document.getElementB
 let player1Wins = 0;
 let player2Wins = 0;
 let board = [0,0,0,0,0,0,0,0,0];
+let boardSymbols = document.getElementsByClassName("symbols");
 let winnerPerson = false;
 let winnerTitle = document.getElementById("winnertag");
-let images1 = document.querySelectorAll("img");
-let images2 = document.getElementsByTagName("img");
-let images3 = document.getElementsByClassName("images");
 let player1box = document.getElementById("player1-shape");
-let usernames = [[document.getElementById("names1").value],[document.getElementById("names2").value]];
-
-
-
+let usernames =[];
 
 function winScreen(winner){
-    winnerTitle.innerHTML= winner + " vann!";
-    winnerTitle.style.transform= "scale(200%)";
-    winnerTitle.style.color="green"; 
+    winnerTitle.innerText = winner + " vann!";
+
+    winnerTitle.style.color="#FFB9EF"; 
+    winnerTitle.style.fontSize="400px";
+    winnerTitle.style.transition="1000ms"
+    winnerTitle.style.opacity="0";
+   
     winnerPerson=true;
     document.getElementById("restart").style.display="block";
+    
 }
 function checkWin(){ 
     if(board[0]==1 && board[1]==1 && board[2]==1){
@@ -70,7 +70,6 @@ function checkWin(){
 	
 }
 function addSymbol(ruta){
-   
     document.getElementById("upptagen").style.display="hidden";
 if(board[ruta-1]==0){
    if(player1turn){
@@ -86,41 +85,32 @@ if(board[ruta-1]==0){
     checkWin();
 }
 function restart(){
-    if(winnerPerson){
       winnerPerson=false;
       board = [0,0,0,0,0,0,0,0,0];
-      alert("funkar")
-      alert(board);
-      alert(images1.length);
-    }
+      for(var i=0; i< boardSymbols.length; i++){
+         boardSymbols[i].style.display = "none";
+     }
 }
 function miniPlayerBox(){
    sett
    player1box.style.height="100px";
 }
 function submitName(){
- 
-   document.getElementById("names1").innerHTML = usernames[0];
-   document.getElementById("names2").innerHTML = usernames[1];
+   usernames = [[document.getElementById("names1").value],[document.getElementById("names2").value]];
    document.getElementById("player1-shape").style.backgroundColor="#A7F1FC";
    document.getElementById("player2-shape").style.backgroundColor="#A7F1FC";
    document.getElementById("insert-name").style.transform="translate(0,100vh)";
-   
-   document.getElementById("names1").innerHTML = usernames[0];
-   document.getElementById("names2").innerHTML = usernames[1];
+   return usernames;
 }
-document.getElementById("play").addEventListener("click",function(){
 
- }
-);
 playerBoxes[0].addEventListener("mouseenter",function(){
-    playerBoxes[0].style.height="330px";
+    playerBoxes[0].style.height="33.3vw";
 });
 playerBoxes[0].addEventListener("mouseleave",function(){
    playerBoxes[0].style.height="100px";
 });
 playerBoxes[1].addEventListener("mouseenter",function(){
-   playerBoxes[1].style.height="330px";
+   playerBoxes[1].style.height="33.3vw";
 });
 playerBoxes[1].addEventListener("mouseleave",function(){
   playerBoxes[1].style.height="100px";
