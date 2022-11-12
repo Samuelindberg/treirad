@@ -1,5 +1,5 @@
 let player1turn = true;
-let colors = ["#FFCB4C","#3856FC","#83B179","#FF6060","#FFB9EF"];
+let colors = ["#788CFC","#FFCB4C","#83B179","#FF6060","#FFB9EF"];
 
 let playerColors = {
    colorButtons : [document.getElementById("changecolor2"),document.getElementById("changecolor2")],
@@ -92,18 +92,18 @@ function checkWin(){
 }
 function addSymbol(ruta){
       if(board[ruta-1]==0){
+         let border="8px solid ";
          if(player1turn){
             document.getElementById("cross"+ruta).style.display="block";
+            border= border + colors[playerColors.playerColor[0]-1];
+            document.getElementById("box"+ruta).style.border= border;
             player1turn =false;
             board[ruta-1]=1;
           } else{document.getElementById("circle"+ruta).style.display="block";
           player1turn=true;board[ruta-1]=2} 
-      
-      } else{
-       // ska vara upptagen-ruta 
-      }
-      
-
+          border= border + colors[playerColors.playerColor[1]-1];
+          document.getElementById("box"+ruta).style.border= border;
+         }
     checkWin();
     if(!board.includes(0) && !winnerPerson){
       document.getElementById("tiescreen").style.display="flex";
@@ -116,13 +116,19 @@ function restart(){
       for(var i=0; i< boardSymbols.length; i++){
          boardSymbols[i].style.display = "none";
      }
+     for(let i=1;i<=9;i++){
+      document.getElementById("box"+i).style.border ="8px solid #ff81e2";
+     }
 }
 function restartTie(){
    document.getElementById("tiescreen").style.display="none";
    winnerPerson=false;
    board = [0,0,0,0,0,0,0,0,0];
-   for(var i=0; i< boardSymbols.length; i++){
+   for(let i=0; i< boardSymbols.length; i++){
       boardSymbols[i].style.display = "none";
+  }
+  for(let i=1;i<=9;i++){
+   document.getElementById("box"+i).style.border ="8px solid #ff81e2";
   }
 }
 
@@ -131,8 +137,10 @@ function submitName(){
    document.getElementById("player1-shape").style.backgroundColor="#A7F1FC";
    document.getElementById("player2-shape").style.backgroundColor="#A7F1FC";
    document.getElementById("insert-name").style.transform="translate(0,100vh)";
-   document.getElementById("name1").innerText= "player " + usernames[0];
-   document.getElementById("name2").innerText="player " + usernames[1];
+    let player1 = "" + usernames[0];
+    let player2 = "" + usernames[1];
+    document.getElementById("name1").innerText = player1.toUpperCase();
+   document.getElementById("name2").innerText= player2.toUpperCase();
    return usernames;
 }
 
@@ -183,6 +191,7 @@ document.getElementById("names2").addEventListener("click",function(){
 function changeColor(player){
    
       if(player==1){
+         
          for(let i=1; i<=9;i++){
          document.getElementById("cross"+i).style.color=colors[playerColors.playerColor[0]];
          
@@ -196,8 +205,13 @@ function changeColor(player){
          else{
             playerColors.playerColor[0]=0;
          }
-        
-
+      
+          let border= "8px solid " + colors[playerColors.playerColor[0]-1];
+         for(i=0;i<board.length;i++){
+            if(board[i]==1){
+               document.getElementById("box"+(i+1)).style.border= border;
+            }
+         }
       } 
       else{
          document.getElementById("changecolor2").style.color=colors[playerColors.playerColor[1]];
@@ -211,6 +225,12 @@ function changeColor(player){
             }
             else{
                playerColors.playerColor[1]=0;
+            }
+            let border= "8px solid " + colors[playerColors.playerColor[1]-1];
+            for(i=0;i<board.length;i++){
+               if(board[i]==2){
+                  document.getElementById("box"+(i+1)).style.border= border;
+               }
             }
       }
       let symbolColor = "";
