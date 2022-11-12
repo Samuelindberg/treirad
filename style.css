@@ -95,7 +95,21 @@ justify-content: center;
     font-family: 'Black Han Sans', sans-serif;
     color: coral;
     font-size: 40px;
-    
+}
+h2#p1-wins{
+    color: #FFCB4C;
+}
+h2#p2-wins{
+    color: #FFCB4C;
+}
+.change-color{
+    margin-top: 30px;
+    background-color: transparent;
+    border:none;
+    font-size: 30px;
+    font-family: 'Black Han Sans', sans-serif;
+    color: #FFB9EF;
+   opacity: 0;
 }
 .game-container{
     margin: 0 20px 0 20px;
@@ -121,6 +135,7 @@ justify-content: center;
     font-size: 175px;
     color: #A2FCF7;
     font-family: 'Rubik Mono One', sans-serif;
+    animation: pulses 4s infinite;
 }
 #winter-title{
     position: absolute;
@@ -252,7 +267,7 @@ font-family: 'Black Han Sans', sans-serif;
     border: none;
     background-color: transparent;
     font-family: 'Rubik Mono One', sans-serif;
-    animation:  pulses 4s infinite;
+    animation:  pulses 3s infinite;
 }
 @keyframes pulses {    
     /* from {
