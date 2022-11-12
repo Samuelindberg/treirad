@@ -105,7 +105,7 @@ function addSymbol(ruta){
       
 
     checkWin();
-    if(!board.includes(0) && winnerPerson){
+    if(!board.includes(0) && !winnerPerson){
       document.getElementById("tiescreen").style.display="flex";
     }
 }
@@ -189,6 +189,7 @@ function changeColor(player){
          document.getElementById("changecolor2").style.transform="scale(1.06)";
          }
          document.getElementById("name1").style.color=colors[playerColors.playerColor[0]];
+         document.getElementById("tic").style.color=colors[playerColors.playerColor[0]];
          if(playerColors.playerColor[0]!=colors.length-1){
             playerColors.playerColor[0]++;
          }
@@ -204,6 +205,7 @@ function changeColor(player){
             document.getElementById("circle"+i).style.color=colors[playerColors.playerColor[1]];
             }
             document.getElementById("name2").style.color=colors[playerColors.playerColor[1]];
+            document.getElementById("toe").style.color=colors[playerColors.playerColor[1]];
             if(playerColors.playerColor[1]!=colors.length-1){
                playerColors.playerColor[1]++;
             }
