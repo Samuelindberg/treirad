@@ -1,10 +1,12 @@
 let player1turn = true;
-let colors = ["white","#FFCB4C","#5B974E","#FF4C4C","#FFB9EF"];
+let colors = ["#FFCB4C","#3856FC","#83B179","#FF6060","#FFB9EF"];
 
 let playerColors = {
    colorButtons : [document.getElementById("changecolor2"),document.getElementById("changecolor2")],
-   playerColor: [0,0]
+   playerColor: [0,0],
+ currentButtonColors: [document.getElementById("changecolor1").style.color,document.getElementById("changecolor2").style.color]
 };
+let currentColor =document.getElementById("changecolor1").style.color;
 let player1Wins = 0;
 let player2Wins = 0;
 let playerWinsDisplay = [document.getElementById("p1-wins"),document.getElementById("p2-wins")];
@@ -103,7 +105,7 @@ function addSymbol(ruta){
       
 
     checkWin();
-    if(!board.includes(0)){
+    if(!board.includes(0) && winnerPerson){
       document.getElementById("tiescreen").style.display="flex";
     }
 }
@@ -181,23 +183,27 @@ document.getElementById("names2").addEventListener("click",function(){
 function changeColor(player){
    
       if(player==1){
-         document.getElementById("changecolor1").style.color=colors[playerColors.playerColor[0]];
          for(let i=1; i<=9;i++){
          document.getElementById("cross"+i).style.color=colors[playerColors.playerColor[0]];
+         
+         document.getElementById("changecolor2").style.transform="scale(1.06)";
          }
+         document.getElementById("name1").style.color=colors[playerColors.playerColor[0]];
          if(playerColors.playerColor[0]!=colors.length-1){
             playerColors.playerColor[0]++;
          }
          else{
             playerColors.playerColor[0]=0;
          }
-     
+        
+
       } 
       else{
          document.getElementById("changecolor2").style.color=colors[playerColors.playerColor[1]];
          for(let i=1; i<=9;i++){
             document.getElementById("circle"+i).style.color=colors[playerColors.playerColor[1]];
             }
+            document.getElementById("name2").style.color=colors[playerColors.playerColor[1]];
             if(playerColors.playerColor[1]!=colors.length-1){
                playerColors.playerColor[1]++;
             }
@@ -205,5 +211,23 @@ function changeColor(player){
                playerColors.playerColor[1]=0;
             }
       }
+      let symbolColor = "";
+      if(player==1){
+       symbolColor = "cross1";
+      }
+      else{
+         symbolColor = "circle1";
+      }
+      playerColors.currentButtonColors[player-1]=document.getElementById(symbolColor).style.color;
+        document.getElementById("changecolor"+player).style.color= colors[playerColors.playerColor[player-1]];
    
 }
+function changeColorTitle(player,positionInside){
+
+   if(positionInside){
+      playerColors.currentButtonColors[player-1]= document.getElementById("changecolor"+player).style.color;
+      document.getElementById("changecolor"+player).style.color= colors[playerColors.playerColor[player-1]];
+   }
+   else{
+      document.getElementById("changecolor"+player).style.color= playerColors.currentButtonColors[player-1];
+}}

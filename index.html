@@ -28,7 +28,7 @@
                 <div id="player1-shape">
                     <h2 id="name1"></h2>
                     <h2 id="p1-wins">WINS:0</h2>
-                    <button onclick="changeColor(1)"class="change-color" id="changecolor1">CHANGE COLOR</button>
+                    <button onmouseenter="changeColorTitle(1,true)" onmouseleave="changeColorTitle(1,false)" onclick="changeColor(1)"class="change-color" id="changecolor1">CHANGE COLOR</button>
                     <!-- <h1 id="display-symbol">O</h1> -->
                     </div>
                 <div id="game-container"class="game-container">
@@ -90,7 +90,7 @@
                     <div  id="player2-shape">
                         <h2 id="name2"></h2>
                         <h2 id="p2-wins">WINS:0</h2>
-                         <button onclick="changeColor(2)" class="change-color"id="changecolor2">CHANGE COLOR</button>
+                         <button onmouseenter="changeColorTitle(2,true)" onmouseleave="changeColorTitle(2,false)" onclick="changeColor(2)" class="change-color"id="changecolor2">CHANGE COLOR</button>
                         <!-- <h1 id="display-symbol2">O</h1> -->
                  </div> 
                  
