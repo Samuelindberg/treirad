@@ -44,12 +44,11 @@ body{
 
 .container{ 
    display: flex;
-    justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
+justify-content: center;
 }
 .container input{
     color:coral;
-    height: 35px;
+    height: 30px;
     width: 250px;
     border-radius: 10px;
     border: none;
@@ -62,15 +61,14 @@ body{
     margin-bottom: 40px;
     font-size: 60px;
 }
-#name1{
-    font-size: 30px;
-}
+
 #player1-shape{
     background-color:#FF7F50;
     transition: 300ms;
     width: 30%;
     height: 100px;
 }
+
 #player2-shape{
     background-color:#FF7F50;
     display: flex;
@@ -160,6 +158,9 @@ body{
     font-size: 30px;
     transition: 1000ms;
 }
+#names1{
+   transition: 100ms; 
+}
 .box {
     width:10vw;
     height: 10vw;
@@ -202,14 +203,13 @@ font-family: 'Black Han Sans', sans-serif;
     transition:100ms;
 }
 
-#insert-name button{
-    margin-top: 20px;
-    width: 150px;
 
-}
 #insert-name button:hover{
+    text-shadow: 5px 5px rgb(255, 188, 163);
+}
 
-    text-shadow: 5px 5px #000000;
+#play{
+   
 }
 .user1{
     margin-right: 300px;
@@ -223,6 +223,7 @@ font-family: 'Black Han Sans', sans-serif;
     flex-direction: column;
 }
 .user1 label{
+
     color: #e58ad0;
    transform: scale(250%);
    font-family: 'Black Han Sans', sans-serif;
@@ -243,13 +244,33 @@ font-family: 'Black Han Sans', sans-serif;
     justify-content: space-between;
 }
 #insert-name button{
-    font-size: 100px;
-    width: fit-content;
+    margin-top: 200px;
+    font-size: 90px;
+    width: 435px;
+    height: 180px;
     color: coral;
     border: none;
     background-color: transparent;
     font-family: 'Rubik Mono One', sans-serif;
+    animation:  pulses 4s infinite;
 }
+@keyframes pulses {    
+    /* from {
+        transform: scale(100%);
+      }
+      to {
+        transform: scale(110%);
+      } */
+      0%{
+        transform: scale(1);
+      }
+      50%{
+        transform: scale(1.05);
+      }
+      100%{
+        transform: scale(1);
+      }
+ }
 .user1 span {
     font-family: 'Black Han Sans', sans-serif;
     color: #FFB9EF;

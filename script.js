@@ -1,9 +1,11 @@
-let player1turn = true; 
+let player1turn = true;
+colors = ["white","#FFB9EF","#FF4C4C"];
+let Colorbuttons = [document.getElementById("changecolor2"),document.getElementById("changecolor2")]
 let player1Wins = 0;
 let player2Wins = 0;
 let playerWinsDisplay = [document.getElementById("p1-wins"),document.getElementById("p2-wins")];
 let playerWinsBigDisplay = [document.getElementById("display-symbol1"),document.getElementById("display-symbol2")];
-
+let inputOpen = [false,false];
 let board = [0,0,0,0,0,0,0,0,0];
 let boardSymbols = document.getElementsByClassName("symbols");
 let winnerPerson = false;
@@ -27,6 +29,7 @@ function winScreen(winner){
       playerWinsDisplay[1].innerText="WINS:"+ player2Wins;
     } 
 }
+
 
 
 function checkWin(){ 
@@ -130,7 +133,7 @@ function submitName(){
 
 playerBoxes[0].addEventListener("mouseenter",function(){
    playerBoxes[0].style.height="33.3vw";
-   s
+
    document.getElementById("display-symbol1").style.transform="scale(200%)";
 
 });
@@ -143,7 +146,32 @@ playerBoxes[1].addEventListener("mouseenter",function(){
 playerBoxes[1].addEventListener("mouseleave",function(){
  playerBoxes[1].style.height="100px";
 });
+document.getElementById("names1").addEventListener("click",function(){
+   if(inputOpen[1]){
+      document.getElementById("usernamelabel2").style.textShadow="none";
+      document.getElementById("names2").style.transform="scale(100%)";
+      inputOpen[1]=false;
+   }
+   document.getElementById("usernamelabel1").style.textShadow="2px 2px #f7d5ef";
+   document.getElementById("names1").style.transform="scale(105%)";
 
-function boxesSizing (player){
-   playerBoxOpen?playerBoxes[player].style.height="100px":playerBoxes[player].style.height="33.3vw";
-}
+   inputOpen[0]=true;
+
+});
+document.getElementById("names2").addEventListener("click",function(){
+   if(inputOpen[0]){
+      document.getElementById("usernamelabel1").style.textShadow="none";
+      document.getElementById("names1").style.transform="scale(100%)";
+      inputOpen[0]=0;
+   }
+   document.getElementById("usernamelabel2").style.textShadow="2px 2px #f7d5ef";
+   document.getElementById("names2").style.transform="scale(105%)";
+   inputOpen[1]=true;
+});
+// document.getElementById("play").addEventListener("mouseenter",function(){
+//    const playButton = document.getElementById("play");
+//    while(playButton.parentNode.matches(":hover")){
+//       playButton.style.transform="scale(110%)";
+//    }
+//    playButton.style.backgroundColor="black";
+// });
