@@ -1,9 +1,8 @@
 let player1turn = true;
 let colors = ["#788CFC","#FFCB4C","#83B179","#FF6060","#FFB9EF"];
-
 let playerColors = {
    colorButtons : [document.getElementById("changecolor2"),document.getElementById("changecolor2")],
-   playerColor: [0,0],
+   playerColor: [1,3],
  currentButtonColors: [document.getElementById("changecolor1").style.color,document.getElementById("changecolor2").style.color]
 };
 let currentColor =document.getElementById("changecolor1").style.color;
@@ -22,6 +21,14 @@ let usernames =[];
 let playerBoxOpen = [false,false];
 let boxes = document.getElementsByClassName("box");
 
+for(let i=1;i<=9;i++){
+   document.getElementById("cross"+i).style.color=colors[playerColors.playerColor[0]-1];
+   document.getElementById("circle"+i).style.color=colors[playerColors.playerColor[1]-1];
+}
+document.getElementById("tic").style.color=colors[playerColors.playerColor[0]-1];
+document.getElementById("toe").style.color=colors[playerColors.playerColor[1]-1];
+document.getElementById("name1").style.color=colors[playerColors.playerColor[0]-1];
+document.getElementById("name2").style.color=colors[playerColors.playerColor[1]-1];
 function winScreen(winner){
     winnerTitle.innerText = winner + " vann!"; 
     winnerPerson=true;
@@ -147,23 +154,23 @@ function submitName(){
 playerBoxes[0].addEventListener("mouseenter",function(){
    playerBoxes[0].style.height="33.3vw";
    setTimeout(() => {
-      document.getElementById("changecolor1").style.opacity="1";
-   }, 150);
+      document.getElementById("changecolor1").style.display="block";
+   }, 300);
 
 });
 playerBoxes[0].addEventListener("mouseleave",function(){
   playerBoxes[0].style.height="100px";
-  document.getElementById("changecolor1").style.opacity="0";
+  document.getElementById("changecolor1").style.display="none";
 });
 playerBoxes[1].addEventListener("mouseenter",function(){
   playerBoxes[1].style.height="33.3vw";
   setTimeout(() => {
-   document.getElementById("changecolor2").style.opacity="1";
-}, 150);
+   document.getElementById("changecolor2").style.display="block";
+}, 300);
 });
 playerBoxes[1].addEventListener("mouseleave",function(){
  playerBoxes[1].style.height="100px";
- document.getElementById("changecolor2").style.opacity="0";
+ document.getElementById("changecolor2").style.display="none";
 });
 document.getElementById("names1").addEventListener("click",function(){
    if(inputOpen[1]){
@@ -201,9 +208,11 @@ function changeColor(player){
          document.getElementById("tic").style.color=colors[playerColors.playerColor[0]];
          if(playerColors.playerColor[0]!=colors.length-1){
             playerColors.playerColor[0]++;
+            const border= "8px solid " + colors[playerColors.playerColor[0]-1];
          }
          else{
             playerColors.playerColor[0]=0;
+            const border= "8px solid " + colors[playerColors.playerColor[0]];
          }
       
           let border= "8px solid " + colors[playerColors.playerColor[0]-1];

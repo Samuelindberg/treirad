@@ -88,28 +88,26 @@ justify-content: center;
 }
 #player2-shape h2{
     font-family: 'Black Han Sans', sans-serif;
-    color: coral;
     font-size: 40px;
 }
 #player1-shape h2{
     font-family: 'Black Han Sans', sans-serif;
-    color: coral;
     font-size: 40px;
 }
 h2#p1-wins{
-    color: #FFCB4C;
+    color: coral;
 }
 h2#p2-wins{
-    color: #FFCB4C;
+    color: coral;
 }
 .change-color{
-    margin-top: 30px;
+    margin-top: 100px;
     background-color: transparent;
     border:none;
     font-size: 45px;
     font-family: 'Black Han Sans', sans-serif;
     color: #FFB9EF;
-   opacity: 0;
+    display: none;
 }
 .game-container{
     margin: 0 20px 0 20px;
@@ -166,12 +164,12 @@ h2#p2-wins{
     justify-content: center;
     align-items: center;
     gap: 0px;
-    height: 870px;
+    height: 1000px;
     width: 80%;
    background-color:rgb(167, 241, 252) ; 
     position: absolute;
     font-size: 30px;
-    transition: 1000ms;
+    transition: 1s cubic-bezier(0.21,-0.34, 0.74, 0.05);
 }
 #names1{
    transition: 100ms; 
@@ -270,12 +268,6 @@ font-family: 'Black Han Sans', sans-serif;
     animation:  pulses 3s infinite;
 }
 @keyframes pulses {    
-    /* from {
-        transform: scale(100%);
-      }
-      to {
-        transform: scale(110%);
-      } */
       0%{
         transform: scale(1);
       }
